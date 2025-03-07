@@ -6,7 +6,7 @@ import MapTemperature from '../maps/MapTemperature';
 
 export function Weather() {
 
-    const API_KEY = import.meta.env.VITE_API_KEY;
+    const API_KEY = "95e38ba9c062f24b1f3654d9a0d542b1";
     const openWeatherIcon1 = "https://openweathermap.org/img/wn/";
     const openWeatherIcon2 = "@2x.png";
     var response: any

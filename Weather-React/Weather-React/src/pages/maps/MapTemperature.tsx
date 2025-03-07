@@ -9,8 +9,8 @@ const mapContainerStyle = {
 const zoomLevel = 10;
 
 export function MapTemperature({ cityCoords }: { cityCoords: { lat: number; lng: number } }) {
-    const API_KEY = import.meta.env.VITE_API_KEY;
-    const googleMapsKey = import.meta.env.VITE_API_KEY_GOOGLE_MAPS;
+    const API_KEY = "95e38ba9c062f24b1f3654d9a0d542b1";
+    const googleMapsKey = "AIzaSyBEz0M30Ang9Pqc8Uaor1Ig5FGXucyDnYk";
     const mapRef = useRef<google.maps.Map | null>(null);
 
     const { isLoaded, loadError } = useLoadScript({
