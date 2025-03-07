@@ -23,7 +23,7 @@ Followed Tips:
 const API_KEY present in src/pages/weather/Weather.tsx and src/pages/maps/MapTemperature.tsx contains the openweather api key used in the project. 
 
 # Google Maps API key
-const googleMapsKey present in src/pages/maps/MapTemperature.tsx contains the google maps api key used in the project. The obtained key ddoes not allow to obtain the full resources necessary to renderize the temperature map because the billing informations for google account associated with the API key were not inserted.
+const googleMapsKey present in src/pages/maps/MapTemperature.tsx contains the google maps api key used in the project. The obtained key does not allow to obtain the full resources necessary to renderize the temperature map because the billing informations for google account associated with the API key were not inserted.
 
 # API Keys important note
 This API keys should appear in a .env file but for a easy upload to github .env file was not uploaded an API keys were inserted directly in the application
