@@ -275,7 +275,7 @@ export function Weather() {
                 <div className="row row-cards vertical">
                     <div className="container-left">
                         <button type="button" title="Back" className="refresh" onClick={goToHomePage}>&larr;</button>
-                        {weatherMainInfos.map((item, index) => {
+                        {weatherMainInfos.map((item) => {
                             const mainInfo = weatherMainInfos.find((m) => m.id === item.id);
                             const date = mainInfo?.date;
                             const city = mainInfo?.city;
@@ -375,7 +375,7 @@ export function Weather() {
                     <option value=" K">K</option>
                 </select>
                 <h3 className="center">Five day Forecast</h3>
-                {dates.map((dateItem, index) => {
+                {dates.map((dateItem) => {
                     const nextDay = nextDays.find((m) => m.id === dateItem.id);
                     const minItem = nextDay?.min
                     const maxItem = nextDay?.max
