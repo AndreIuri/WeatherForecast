@@ -37,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Weather-React/Weather-React/build  # Change to your actual build path
+          path: Weather-React/Weather-React/dist  # Change to your actual build path
 
   deploy:
     environment:
