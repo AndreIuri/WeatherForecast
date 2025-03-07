@@ -21,19 +21,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  # Adjust Node.js version if needed
+
       - name: Install dependencies
-        run: npm install  # This installs all dependencies from package.json
+        run: npm install
+        working-directory: WeatherForecast/Weather-React/Weather-React  # Change to your actual path
 
       - name: Build React App
         run: npm run build
+        working-directory: WeatherForecast/Weather-React/Weather-React  # Change to your actual path
 
       - name: Disable Jekyll
-        run: touch build/.nojekyll  # Prevents Jekyll from interfering
+        run: touch build/.nojekyll
+        working-directory: WeatherForecast/Weather-React/Weather-React  # Change to your actual path
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: WeatherForecast/Weather-React/Weather-React/build  # Change to your actual build path
 
   deploy:
     environment:
@@ -45,5 +53,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
