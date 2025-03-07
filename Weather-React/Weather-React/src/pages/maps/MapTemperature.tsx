@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import {useRef } from "react";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 const mapContainerStyle = {

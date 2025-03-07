@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { Formik, Field, Form } from "formik";
 import * as yup from "yup";
 import GraphTemperature from '../graphs/GraphTemperature';
