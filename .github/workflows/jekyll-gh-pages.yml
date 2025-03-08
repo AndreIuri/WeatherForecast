@@ -34,14 +34,10 @@ jobs:
         run: npm run build
         working-directory: Weather-React/Weather-React  # Change to your actual path
 
-      - name: Disable Jekyll
-        run: touch build/.nojekyll
-        working-directory: Weather-React/Weather-React  # Change to your actual path
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Weather-React/Weather-React/build  # Change to your actual build path
+          path: Weather-React/Weather-React/dist  # Change to your actual build path
 
   deploy:
     environment:
