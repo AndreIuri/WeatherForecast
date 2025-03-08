@@ -1,5 +1,3 @@
-import sun from '/assets/sun.jpg';
-
 export function Home() {
 
     const goToWeatherPage = () => {
