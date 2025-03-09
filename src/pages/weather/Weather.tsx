@@ -407,3 +407,5 @@ export function Weather() {
     </>
     )
 }
+
+export default Weather;
