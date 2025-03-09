@@ -1,18 +1,11 @@
-// App.tsx
-import './App.css';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
-import { Home } from './pages/home/Home';
-import { Weather } from './pages/weather/Weather';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      {/* No need to wrap this with Router */}
-      <Router basename="/WeatherForecast">  
-        <Route path="/" element={<Home />} />
-        <Route path="/weather" element={<Weather />} />
-      </Router>
-    </>
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="/weather">Weather</Link>
+    </nav>
   );
 }
 
