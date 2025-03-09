@@ -39,9 +39,6 @@ jobs:
       - name: Disable Jekyll
         run: touch WeatherForecast/dist/.nojekyll  # ✅ Creates the file
 
-      - name: Debug: List files in dist/
-        run: ls -la WeatherForecast/dist  # ✅ Check if .nojekyll exists
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
