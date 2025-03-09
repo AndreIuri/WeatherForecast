@@ -28,21 +28,19 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd WeatherForecast  # ✅ Ensure you're in the correct directory
           npm install
 
       - name: Build React App
         run: |
-          cd WeatherForecast
           npm run build
 
       - name: Disable Jekyll
-        run: touch WeatherForecast/dist/.nojekyll  # ✅ Creates the file
+        run: touch ./dist/.nojekyll  # ✅ Creates the file
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: WeatherForecast/dist
+          path: ./dist
 
   deploy:
     environment:
