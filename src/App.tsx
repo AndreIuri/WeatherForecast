@@ -1,17 +1,18 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Import Router and Routes
-
+// App.tsx
+import './App.css';
+import { Route, Routes } from 'react-router-dom';  // Make sure to use Routes instead of just Route
 import { Home } from './pages/home/Home';
 import { Weather } from './pages/weather/Weather';
 
 function App() {
   return (
-    <Router basename="/WeatherForecast">
+    <>
+      {/* No need to wrap this with Router */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/weather" element={<Weather />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
