@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/WeatherForecast">  {/* Ensure this matches your deployment base */}
+    <BrowserRouter>  {/* Ensure this matches your deployment base */}
       <App />
     </BrowserRouter>
   </React.StrictMode>
