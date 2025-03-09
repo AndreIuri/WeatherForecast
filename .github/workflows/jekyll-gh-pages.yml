@@ -2,7 +2,7 @@ name: Deploy React App to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # Change if using a different default branch
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -24,7 +24,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18  # Adjust Node.js version if needed
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
@@ -33,20 +33,10 @@ jobs:
         run: npm run build
 
       - name: Disable Jekyll
-        run: touch dist/.nojekyll  # Disable Jekyll for the dist directory
+        run: touch WeatherForecast/dist/.nojekyll  # Corrected path
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: /dist  # Use dist instead of build
+          path: WeatherForecast/dist  # Corrected
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
