@@ -1,6 +1,6 @@
 // App.tsx
 import './App.css';
-import { Route, Routes } from 'react-router-dom';  // Make sure to use Routes instead of just Route
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import { Home } from './pages/home/Home';
 import { Weather } from './pages/weather/Weather';
 
@@ -8,10 +8,10 @@ function App() {
   return (
     <>
       {/* No need to wrap this with Router */}
-      <Routes>
+      <Router basename="/WeatherForecast">  
         <Route path="/" element={<Home />} />
         <Route path="/weather" element={<Weather />} />
-      </Routes>
+      </Router>
     </>
   );
 }
