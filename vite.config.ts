@@ -7,7 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ['@canvasjs/react-charts'],
   },
-  base: '/WeatherForecast/',
+  base: '/',
   build: {
     outDir: 'dist',
   },
