@@ -10,7 +10,7 @@ Weather forecast application built in React where it is possible to obtain the 5
 The application was built through Vite that allows to create projects in different frameworks including React. The command to install Vite through npm is "npm install -D vite"
 
 # Notes
-Necessary to install 'npm install' inside WeatherForecast\Weather-React\Weather-React folder to obtain node modules folder
+Necessary to install 'npm install' to obtain node modules folder
 
 Project contains some funcionalities like:
 - a graph with the evolution of the temperature per day built using CanvasJS "https://canvasjs.com/" installed through "npm install @canvasjs/react-charts"
