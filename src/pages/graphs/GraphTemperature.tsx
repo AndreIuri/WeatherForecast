@@ -1,17 +1,30 @@
-import CanvasJSReact from '@canvasjs/react-charts';
+import { useEffect, useState } from "react";
 
-let CanvasJSChart = CanvasJSReact.CanvasJSChart;
+export function GraphTemperature({ temperatures, chosenDay, tempScale }: { temperatures: any[], chosenDay: string, tempScale: string }) {
+    const [CanvasJSChart, setCanvasJSChart] = useState<any>(null);
 
-export function GraphTemperature({ temperatures, chosenDay, tempScale }: { temperatures: any[], chosenDay:string, tempScale: string }) {
+    useEffect(() => {
+        // Dynamically import the module and assign the default export
+        import("@canvasjs/react-charts").then((module) => {
+            setCanvasJSChart(() => module.default); // Use default export
+        });
+    }, []);
+
+    // Show loading state until the module is loaded
+    if (!CanvasJSChart) {
+        return <div>Loading Chart...</div>;
+    }
+
     const filteredTemperatures = temperatures.filter(entry => entry.dayNum === chosenDay);
 
     if (filteredTemperatures?.length > 0) {
-        const fullDay = filteredTemperatures[0].year + "-" + filteredTemperatures[0].month + "-" + filteredTemperatures[0].dayNum
+        const fullDay = `${filteredTemperatures[0].year}-${filteredTemperatures[0].month}-${filteredTemperatures[0].dayNum}`;
+        
         const options = {
             animationEnabled: true,
             theme: "light2",
             title: {
-                text: "Temperature Evolution "+fullDay
+                text: `Temperature Evolution ${fullDay}`
             },
             axisX: {
                 valueFormatString: "HH:mm",
@@ -44,14 +57,14 @@ export function GraphTemperature({ temperatures, chosenDay, tempScale }: { tempe
                     yValueFormatString: "#" + String(tempScale),
                     dataPoints: filteredTemperatures.map((entry: any, index) => ({
                         x: new Date(
-                            parseInt(entry.year), 
+                            parseInt(entry.year),
                             parseInt(entry.month) - 1,
-                            parseInt(entry.dayNum), 
+                            parseInt(entry.dayNum),
                             parseInt(entry.hour)
                         ),
                         y: parseFloat(entry.temp),
                         key: index
-                    }))                    
+                    }))
                 }
             ]
         };
