@@ -17,7 +17,7 @@
       },
       {
         "src": "/weather",
-        "dest": "/"
+        "dest": "/weather"
       }
     ]
   }
