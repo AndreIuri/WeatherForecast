@@ -8,7 +8,7 @@ import App from './App.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/WeatherForecast">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>,
