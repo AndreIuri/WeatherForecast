@@ -12,12 +12,8 @@
     ],
     "routes": [
       {
-        "src": "/",
-        "dest": "/"
-      },
-      {
-        "src": "/weather",
-        "dest": "/weather"
+        "src": "/(.*)",
+        "dest": "/index.html"
       }
     ]
   }
